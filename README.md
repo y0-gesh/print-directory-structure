@@ -1,4 +1,4 @@
-# Use the PowerShell tree function
+# Use the Windows PowerShell tree function
 
 This is the most effective and recommended solution, as it prevents the expensive recursion into the unwanted directories entirely. You can add this custom function to your PowerShell session or profile for future use. 
 
@@ -50,4 +50,21 @@ To exclude additional folders, just pass them to the -Exclude parameter.
 
 ```ps
 Get-Tree -Exclude 'node_modules', 'cache', 'dist'
+```
+
+# For Mac
+
+```
+find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+```
+
+or 
+
+```
+ls -R
+```
+or
+
+```
+brew install tree
 ```
